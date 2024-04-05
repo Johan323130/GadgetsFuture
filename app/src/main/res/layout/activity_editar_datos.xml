@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Editar_datos">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.Toolbar
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/ColorPrincipal">
+
+                <ImageButton
+                    android:id="@+id/btnBack"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="#00000000"
+                    android:src="@drawable/arrow_left_white" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="40dp"
+                    android:text="Datos personales"
+                    android:textAlignment="center"
+                    android:textColor="#FFFFFF"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+            </androidx.appcompat.widget.Toolbar>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="275dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="50dp"
+                android:text="Nombre:"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:textStyle="bold"/>
+
+            <EditText
+                android:id="@+id/txtNombre"
+                android:layout_width="275dp"
+                android:layout_height="45dp"
+                android:layout_gravity="center"
+                android:background="@drawable/borde_text"
+                android:ems="10"
+                android:hint="Ingrese su nombre..."
+                android:inputType="text" />
+
+            <TextView
+                android:id="@+id/nameError"
+                android:layout_width="271dp"
+                android:layout_height="wrap_content"
+                android:textColor="#D80000"
+                android:layout_gravity="center"
+                android:layout_marginTop="4dp"/>
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="275dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="3dp"
+                android:text="Numero telefónico o celular:"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/txtNum"
+                android:layout_width="275dp"
+                android:layout_height="45dp"
+                android:background="@drawable/borde_text"
+                android:ems="10"
+                android:hint="Ingrese su telefono..."
+                android:inputType="phone"
+                android:layout_gravity="center"/>
+
+            <TextView
+                android:id="@+id/numError"
+                android:layout_width="271dp"
+                android:layout_height="wrap_content"
+                android:textColor="#D80000"
+                android:layout_gravity="center"
+                android:layout_marginTop="4dp"/>
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="275dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="3dp"
+                android:text="Correo electrónico:"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/txtEmail"
+                android:layout_width="275dp"
+                android:layout_height="45dp"
+                android:layout_gravity="center"
+                android:background="@drawable/borde_text"
+                android:ems="10"
+                android:hint="Ingrese su email..."
+                android:inputType="textEmailAddress" />
+
+            <TextView
+                android:id="@+id/emailError"
+                android:layout_width="271dp"
+                android:layout_height="wrap_content"
+                android:textColor="#D80000"
+                android:layout_gravity="center"
+                android:layout_marginTop="4dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginTop="30dp">
+
+                <Button
+                    android:id="@+id/btnGuardar"
+                    android:layout_width="271dp"
+                    android:layout_height="wrap_content"
+                    android:text="Guardar cambios"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>
