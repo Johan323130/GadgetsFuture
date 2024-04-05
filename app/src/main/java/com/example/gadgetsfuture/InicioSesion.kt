@@ -121,7 +121,7 @@ class InicioSesion : AppCompatActivity() {
                 if (token.isNotEmpty()) {
                     config.token = token
                 }
-                saveCredentials(username, password) // Guardar las credenciales
+                saveCredentials(username, password, token) // Guardar las credenciales
             },
             { error ->
 
@@ -143,7 +143,7 @@ class InicioSesion : AppCompatActivity() {
 
 
     // Función para guardar las credenciales
-    private fun saveCredentials(username: String, password: String) {
+    private fun saveCredentials(username: String, password: String,token: String) {
         config.SharedPreferences = getSharedPreferences("myPrefs", Context.MODE_PRIVATE)
         val editor = config.SharedPreferences.edit()
         editor.putString("username", username)

@@ -1,5 +1,7 @@
 package com.example.gadgetsfuture;
 
+import android.content.Context
+import android.net.ConnectivityManager
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -66,6 +68,7 @@ class Home_fragment : Fragment() {
 
         llamarPeticion()
 
+
         return view
     }
 
@@ -89,6 +92,8 @@ class Home_fragment : Fragment() {
             }
     }
 
+
+
     fun llamarPeticion(){
         GlobalScope.launch(Dispatchers.Main) {
             try {
@@ -99,40 +104,38 @@ class Home_fragment : Fragment() {
         }
     }
 
-
-    suspend fun peticionListaProductosH(){
-        // http://192.168.153.200:8000/api/list_product/v1/
-        var url=config.urlBase+"api/list_product/v1/"
-        var queue= Volley.newRequestQueue(activity)
-        var request= JsonArrayRequest(
+    private suspend fun peticionListaProductosH() {
+        val url = config.urlBase + "api/list_product/v1/"
+        val queue = Volley.newRequestQueue(activity)
+        val request = JsonArrayRequest(
             Request.Method.GET,
             url,
             null,
-            {response->
+            { response ->
                 cargarLista(response)
             },
-            {error->
-                Toast.makeText(activity, "Error en la solicitud: {$error}", Toast.LENGTH_LONG).show()
+            { error ->
+                Toast.makeText(activity,"Error de conexión, intentalo más tarde", Toast.LENGTH_LONG).show()
             }
         )
         queue.add(request)
     }
 
-
-    fun cargarLista(listaProductos: JSONArray){
-        recycler.layoutManager= LinearLayoutManager(activity)
-        var adapter= adapterHome(activity, listaProductos)
-        // Cambio de fragmento desde otro
-        adapter.onclick= {
-            val bundle=Bundle()
-            bundle.putInt("id_productoH",it.getInt("id"))
-            val transaction=requireFragmentManager().beginTransaction()
-            var fragmento=detalle_producto()
-            fragmento.arguments=bundle
+    private fun cargarLista(listaProductos: JSONArray) {
+        recycler.layoutManager = LinearLayoutManager(activity)
+        val adapter = adapterHome(activity, listaProductos)
+        adapter.onclick = {
+            val bundle = Bundle()
+            bundle.putInt("id_productoH", it.getInt("id"))
+            val transaction = requireFragmentManager().beginTransaction()
+            val fragmento = detalle_producto()
+            fragmento.arguments = bundle
             transaction.replace(R.id.container, fragmento).commit()
             transaction.addToBackStack(null)
         }
-        recycler.adapter=adapter
+        recycler.adapter = adapter
     }
+
+
 
 }

@@ -6,10 +6,10 @@
 
 <item android:drawable="@color/white" />
     <item
-        android:drawable="@drawable/logogadgetsfuture"
+        android:drawable="@drawable/logo_gadegts_future_gris"
         android:gravity="center"
-        android:height="150dp"
-        android:width="430dp">
+        android:height="130dp"
+        android:width="350dp">
 
     </item>
 
