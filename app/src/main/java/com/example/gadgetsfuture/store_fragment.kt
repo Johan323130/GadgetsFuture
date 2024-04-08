@@ -142,7 +142,7 @@ class store_fragment : Fragment() {
                 cargarLista(response)
             },
             {error->
-                Toast.makeText(activity, "Error en la solicitud: {$error}", Toast.LENGTH_LONG).show()
+                Toast.makeText(activity, "Producto no encontrado en el inventario", Toast.LENGTH_LONG).show()
             }
         )
         queue.add(request)

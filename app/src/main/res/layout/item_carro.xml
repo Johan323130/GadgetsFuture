@@ -48,6 +48,7 @@
                         android:layout_gravity="top|end"/>
 
                     <TextView
+                        android:id="@+id/txtNombreProducto"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
@@ -55,12 +56,28 @@
                         android:textSize="17sp"
                         android:textStyle="bold" />
 
-                    <TextView
+                    <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:text="Precio $ 100,000"
-                        android:textSize="18sp" />
+                        android:orientation="horizontal"
+                        android:layout_marginTop="10dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Precio"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/txtPrecio"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="$"
+                            android:textSize="18sp"
+                            android:layout_marginStart="5dp"/>
+
+
+                    </LinearLayout>
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -85,14 +102,17 @@
                         android:layout_gravity="end|bottom">
 
                         <Button
+                            android:id="@+id/btnRestar"
                             android:layout_width="38dp"
                             android:layout_height="32dp"
                             android:drawableTop="@drawable/resta"
                             android:layout_gravity="center"
                             android:background="@drawable/borde_suma_resta_carro"
+                            android:onClick="restar"
                             />
 
-                        <EditText
+                        <TextView
+                            android:id="@+id/txtCantidad"
                             android:layout_width="40dp"
                             android:layout_height="wrap_content"
                             android:background="@null"
@@ -100,14 +120,16 @@
                             android:maxLength="2"
                             android:layout_gravity="center"
                             android:textAlignment="center"
-                            android:inputType="number"/>
+                            android:textSize="20dp"/>
 
                         <Button
+                            android:id="@+id/btnSumar"
                             android:layout_width="40dp"
                             android:layout_height="30dp"
                             android:drawableTop="@drawable/suma"
                             android:layout_gravity="center"
                             android:background="@drawable/borde_suma_resta_carro"
+                            android:onClick="sumar"
                             />
 
                     </LinearLayout>
