@@ -15,7 +15,7 @@ class adapter_cart(private val listaItems: List<item_carro>) :
         private val precioTextView: TextView = itemView.findViewById(R.id.txtPrecio)
 
         init {
-            // Configura el click listener para los botones de sumar y restar
+            // Configure el click listener para los botones de sumar y restar
             itemView.findViewById<View>(R.id.btnSumar).setOnClickListener {
                 val position = adapterPosition
                 if (position != RecyclerView.NO_POSITION) {

@@ -17,8 +17,8 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            >
+            android:orientation="vertical">
+
             <ImageButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -26,19 +26,21 @@
                 android:onClick="inicioS"
                 android:src="@drawable/arrow_left"
                 android:layout_gravity="start"/>
+
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:gravity="end"
-            >
+            android:gravity="end">
+
             <ImageView
                 android:id="@+id/imageView"
                 android:layout_width="150dp"
                 android:layout_height="60dp"
                 android:src="@drawable/logo_gadegts_future_gris"/>
+
         </LinearLayout>
 
     </LinearLayout>

@@ -19,13 +19,13 @@ class adapterHome (var context: Context?, var  listaProductoH:JSONArray)
     :RecyclerView.Adapter<adapterHome.MyHolder>() {
 
     inner class MyHolder(Item: View):RecyclerView.ViewHolder(Item){
-        lateinit var lblnombre:TextView
-        lateinit var lblprecio:TextView
-        lateinit var lblprecioDescunto:TextView
-        lateinit var lblporcentajeDescunto:TextView
-        lateinit var imgProducto: ImageView
-        lateinit var btnCarrito: Button
-        lateinit var cardProductoH: CardView
+        var lblnombre:TextView
+        var lblprecio:TextView
+        var lblprecioDescunto:TextView
+        var lblporcentajeDescunto:TextView
+        var imgProducto: ImageView
+        var btnCarrito: Button
+        var cardProductoH: CardView
 
         init {
             lblnombre=itemView.findViewById(R.id.lblNombreH)
