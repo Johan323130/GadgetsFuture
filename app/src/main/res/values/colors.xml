@@ -5,6 +5,7 @@
     <color name="ColorPrincipal">#15359B</color>
     <color name="selected_color">#000000</color>
     <color name="red">#DA0000</color>
-    <color name="transparente">#fef7ff</color>
+    <color name="aprobado">#2ca526</color>
+    <color name="transparente">#00FEF7FF</color>
 
 </resources>

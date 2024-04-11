@@ -92,8 +92,6 @@ class Home_fragment : Fragment() {
             }
     }
 
-
-
     fun llamarPeticion(){
         GlobalScope.launch(Dispatchers.Main) {
             try {
