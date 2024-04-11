@@ -20,7 +20,6 @@ import org.json.JSONObject
 class UserFragment : Fragment() {
 
     private lateinit var cardEditarDatos: CardView
-    private lateinit var cardPedidosC: CardView
     private lateinit var historialPedidos: CardView
     private lateinit var cardCerrarSesion: CardView
     private lateinit var cardContacto: CardView
@@ -37,7 +36,6 @@ class UserFragment : Fragment() {
         usernameCliente = view.findViewById(R.id.txtUsername)
         nombreCliente = view.findViewById(R.id.txtNombreUser)
         cardEditarDatos = view.findViewById(R.id.cardEditarDatos)
-        cardPedidosC = view.findViewById(R.id.cardPedidosC)
         historialPedidos = view.findViewById(R.id.historialPedidos)
         cardCerrarSesion = view.findViewById(R.id.cardCerrarSesion)
         cardContacto = view.findViewById(R.id.cardContacto)
@@ -47,11 +45,6 @@ class UserFragment : Fragment() {
         cardEditarDatos.setOnClickListener {
             val edit = Intent(requireContext(), Editar_datos::class.java)
             startActivity(edit)
-        }
-
-        cardPedidosC.setOnClickListener {
-            val pedi = Intent(requireContext(), Pedidos_EnCamino::class.java)
-            startActivity(pedi)
         }
 
         historialPedidos.setOnClickListener {
