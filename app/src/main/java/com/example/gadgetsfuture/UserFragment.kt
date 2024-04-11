@@ -26,14 +26,12 @@ class UserFragment : Fragment() {
     private lateinit var cardSuspender: CardView
     private lateinit var url: String
     private lateinit var nombreCliente: TextView
-    private lateinit var usernameCliente: TextView
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_user, container, false)
-        usernameCliente = view.findViewById(R.id.txtUsername)
         nombreCliente = view.findViewById(R.id.txtNombreUser)
         cardEditarDatos = view.findViewById(R.id.cardEditarDatos)
         historialPedidos = view.findViewById(R.id.historialPedidos)
@@ -69,6 +67,7 @@ class UserFragment : Fragment() {
             //clearCredentials()
             //redirectToLoginActivity()
         }
+        busca_cliente()
 
         return view
     }
@@ -102,7 +101,7 @@ class UserFragment : Fragment() {
     }
 
     suspend fun peticion_cliente(){
-        val url = config.urlBase + "urlCuenta"
+        val url = config.urlCuenta + "v1/profile/"
         val queue = Volley.newRequestQueue(activity)
         val request = object : JsonObjectRequest(
             Method.POST,
@@ -135,10 +134,9 @@ class UserFragment : Fragment() {
     fun cargar_formulario(registro: JSONObject){
         var nombre=registro.getString("nombre")
         if(nombre=="null"){
-            nombre = registro.getString("username")
+            nombre = registro.getString("apellido")
         }
         nombreCliente.setText(nombre)
-        usernameCliente.text = registro.getString("username")
 
     }
 
